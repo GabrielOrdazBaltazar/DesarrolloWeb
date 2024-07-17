@@ -1,0 +1,332 @@
+/*PROPIEDADES CUSTOM (para cualquier tipo de valor)*/
+/*Paleta de colores*/
+:root{
+    --blanco:     #ffffff;
+    --obscuro:    #212121;
+    --primario:   #FFC107;
+    --secundario: #0097A7;
+    --gris:       #757575;
+    --grisClaro:  #DFE9F3;
+
+}
+
+html{
+    /*Re dimenciona tdodo el archivo*/
+    font-size: 62.5%;
+    /*Agrega a todos tus proyectos*/
+    box-sizing: inherit;
+}
+
+/* "*" selecciona todos los elementos  (Agrega a todos tus proyectos)*/
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+
+body{
+    /*Redimenciona todo el codigo que este dentro del body para poder trabajar con "rems"*/ 
+    font-size: 16px;
+    /*Cambiar fuente de letra (estilo sacado de googles)*/
+    font-family: 'Krub', sans-serif; 
+    /*Degradado de un color (dondeIniciaElDegradado, color, hacia el color que se degrada )*/
+    background-image: linear-gradient(to top,var(--grisClaro) 0%, var(--blanco) 100%);
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+
+/*Aplica los estilos a todas las etiquetas h1 esta es un SELECTOR DE ELEMENTO*/
+/*
+h1{
+    //Centrar un texto
+    text-align: center;
+    //1rem = 10px y ayuda a manejar mejor los espacios en pantalla
+    font-size: 3.8rem;
+
+}
+*/
+
+.titulo{
+    text-align: center;
+    
+    /*Para llamar un atributo definido por nosotros en root*/
+    /*
+    color: var(--primario);
+    */
+}
+/*Aplica los estilos a las etiquetas "span" que esten dentro de la clase  s"titulo"*/
+.titulo span{
+    font-size: 2rem;
+}
+
+
+
+/*Aplicando especificidad, se aplica porque es muy especifico, en este caso selecciona 
+todos los elemetos con la etiqueta "h1" que contengan la calse "titulo" y esten dentro de un "span"*/
+/*
+h1.titulo span{
+    font-size: 2rem;
+    color: red;
+}
+*/
+/*Para poder tener la mayor prioridad puedes usar la etiqueta importat*/
+/*
+span{
+    font-size: 2rem;
+    color: green !important;
+}
+*/
+
+.contenedor{
+    max-width: 120rem;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+
+    /*margin toma los 4 valores sin nesecidad de ingresar todos los valores de una sola vez arriba,
+    derecha,abajo,izquierda*/
+    margin: 0 auto 0 auto;
+
+}
+
+.boton{
+    /*Color de fondo*/
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    /*Pone todas las letras en mayusculas*/
+    text-transform: uppercase;
+    font-weight: bold;
+    /*Redondear un boton*/
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+@media (min-width:480px ){
+    .boton{
+        width: auto;
+    }
+}
+
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 15px 4px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 15px 4px rgba(0,0,0,0.75);
+    padding: 2rem; 
+    border-radius: 2rem;   
+}
+
+.nav_bg{
+    background-color: var(--secundario);
+}
+
+/*Barra de navegacion*/
+.navegacion_principal{
+    /*Para re distribuir los espacios*/
+    display: flex;
+    flex-direction: column;
+}
+
+/*Media Queri nos permite adaptarnos si la pantalla del dispositivo cunple cierta condicion*/
+/*Celular*/
+@media (min-width:480px ){
+    
+}
+
+/*Tablets*/
+@media (min-width: 768px){
+    .navegacion_principal{
+        flex-direction: row;
+        /*mover horizontalmente los elementos*/
+        justify-content: space-between;   
+    }
+}
+
+/*Laptops*/
+@media (min-width: 1140px){
+    
+}
+
+/*Pantallas*/
+@media (min-width: 1400px){
+    
+}
+
+/*agregamos estilo a las etiquetas "a"*/
+
+.navegacion_principal a{
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    color: var(--blanco);
+    /*Eliminar la linea del link*/
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700rem;
+}
+
+.navegacion_principal a:hover{
+    background-color: var(--primario);
+    color: var(--obscuro);
+}
+
+/*Imagenes css*/
+.hero{
+    /*Los dos puntos nos prermiten salir de la carpeta*/
+    background-image: url(../img/hero.jpg);
+    /*no repite la imagen a lo largo*/
+    background-repeat: no-repeat;
+    /*la imagen aprovecha todo el espacio */
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero{
+    position: absolute;
+    /*Da un color a el elemento de fondo red gren blue y el cuarto elemento es transaparencia*/
+    background-color: rgb(0, 0,0,.3);
+    /*Lo mismo de arriba pero nuevo*/
+    background-color: rgb(0 0 0 /30%);
+    width: 100%;
+    height: 100%;
+
+    /*Para alinear verticalmente*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2, .contenido-hero p{
+    color: var(--blanco);
+}
+
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+
+
+@media (min-width: 768px){
+    /*CSS grid tiene acceso en dos dimenciones para el diseño*/
+    .servicios{
+        display: grid;
+        /*genera columnas con el contenido */
+        grid-template-columns: 300px 300px;
+        grid-template-rows: 200px 800px;
+        /*Vercion corta 
+        grid 200px 800px / 300px 300px
+        */
+
+        /*Acomoda el contenido en el 33%*/
+        /*grid-template-columns: 33.3% 33.3% 33.3%;*/
+        /*otra forma es repartir por fracciones el numero de elementos
+        grid-template-columc: 1fr 1fr 1fr
+        */
+
+        /*lo mismo pero mas reducido*/
+        grid-template-columns: repeat(3, 1fr);
+        
+
+        /*Es como un margin (da separacion entre columnas)*/
+        column-gap: 1rem;
+    }
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3{
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p{
+    /*interlineado*/
+    line-height: 2;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width:  15rem;
+    background-color: var(--grisClaro);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*Contacto*/
+.formulario{
+    background-color: var(--gris);
+    /*utiliza el valor mas pequeño*/
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+.contenedor-campos{
+
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.enviar .boton{
+    width: 90%;
+}
