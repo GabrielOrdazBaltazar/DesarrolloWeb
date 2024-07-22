@@ -1,0 +1,21 @@
+{
+    "name": "tachy/03_po-ocon-php",
+    "description": "aprendiendo namespace y autoload",
+    "autoload": {
+        "psr-4": {
+            "Tachy\\03PoOconPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tachy",
+            "email": "tachyquellora123@gamil.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\" : "clases"
+        }
+    }
+}
